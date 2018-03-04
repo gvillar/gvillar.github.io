@@ -7,6 +7,4 @@ In this webpage i'll put articles made by me that prioritise data analyses and d
 
 ## Copyright and License
 
-Content in the webpage: Copyright 2017 Guillermo Villar
-
-Template: Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-bare/blob/gh-pages/LICENSE) license.
+Copyright 2018 Guillermo Villar
