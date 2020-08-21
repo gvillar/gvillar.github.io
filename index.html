@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="jquery.js"></script>
 		<style>
  
-                        .box,.politics,.culture,.economics,.sports,.international,.national,.breaking,.technology{
+                        .box,.politics,.culture,.economics,.sports,.international,.national,.breaking,.technology, .others{
                                 width:17%;
                                 height:175px;
                                 margin:20px;
@@ -81,27 +81,27 @@
                                 opacity:1;
                         }
 
-                        .ddj{
+                        .dss{
                                 color:#D70026;
                                 
                         }
-                        .ddj:hover{
+                        .dss:hover{
                                 border-color:#D70026;
                                 background-color:#D70026;
                         }
-                        .data{
+                        .ddj{
                                 color:#19233e;
                         }
-                        .data:hover{
+                        .ddj:hover{
                                 border-color:#19233e;
                                 background-color:#19233e;
                                 
                         }
-                        .text{
+                        .data{
                                 color:#5293B9;
                         }
 
-                        .text:hover{
+                        .data:hover{
                                 border-color:#5293B9;
                                 background-color:#5293B9;
 
@@ -181,7 +181,7 @@
 
         @media (max-device-width:950px),(max-width:950px){
 
-                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology{
+                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology,.others{
                                 width:95%;
                                 margin-left:5px;
                                 border:solid 4px;
@@ -244,7 +244,7 @@
                                 font-size:35px;
                         }
 
-                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology{
+                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology,.others{
                                 height:340px;
                         }
         }
@@ -258,7 +258,7 @@
                         p{
                                 font-size:11px;
                         }
-                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology{
+                        .box,.politics,.culture,.society,.economics,.sports,.international,.national,.breaking,.technology,.others{
                                 height:150px;
                         }
                         button{
@@ -286,8 +286,8 @@
             <h4>I hold a Master's degree in Data Science from The Netherlands to improve my skills in data journalism through R and Python. I enjoy with the application of data analysis, text mining and data visualization (<i>ggplot2</i> and online tools). Before this, I did a Master's degree (<i>título propio</i>) in data journalism and I also graduated in Journalism with Extraordinary Prize (best student award) and in Audiovisual Communication.</h4>
 
             <h4>My portfolio contains a selection of the projects from my data-journalism-related internships at two of the most important newsrooms in Spain (El País and RTVE -Lab RTVE-) and from my collaboration through data-oriented content at a communication agency focused on digital transformation. If you are interested in all what I can do nowadays, send me a message.</h4>
-			<h2><font color='#D70026'>Data journalism</font>, <font color='#19233e'>data-based stories</font> and 
-			<font color='#5293B9'>text analyses</font></h2>
+			<h2><font color='#D70026'>Data science</font>, <font color='#19233e'>data journalism</font> and 
+			<font color='#5293B9'>data-led stories</font></h2>
 		</div>
 
 
@@ -299,10 +299,25 @@
 			<button onclick="filter('politics')" title="Select politics news">Politics</button>
 			<button onclick="filter('technology')" title="Select technology news">Technology</button>
 			<button onclick="filter('education')" title="Select education news">Education</button>
-                        <button onclick="filter('economics')" title="Select economics news">Economics</button>
+            <button onclick="filter('economics')" title="Select economics news">Economics</button>
+            <button onclick="filter('others')" title="Select economics news">Others</button>
 		</div>
 		
 		<div>
+
+                <a class='box others dss' href="https://github.com/gvillar/master_thesis" target="_blank"title="Access to the Github website"">
+                        <h3>Master's thesis | Dwell times as actions between events to predict intent</h3>
+                        <p>Supervision: Dr. Giovanni Cassani | Tilburg University | 2020</p>
+                </a>
+
+                <a class='box others data' href="https://github.com/gvillar/TidyTuesday/tree/master/week%202%20(%23TidyTuesday%20week%2031)" target="_blank"title="Access to the Github website">
+                        <h3>#TidyTuesday | Which penguin are you: Adelie, Chinstra or Gentoo?</h3>
+                        <p>Personal contribution | 05/08/2020</p>
+                </a>
+                 <a class='box others data' href="https://github.com/gvillar/TidyTuesday/tree/master/week%201%20(%23TidyTuesday%20week%2030)" target="_blank"title="Access to the Github website">
+                        <h3>#TidyTuesday | Complaints about dogs per month</h3>
+                        <p>Personal contribution | 26/07/2020</p>
+                </a>
                 <a class='box economics ddj' href="https://www.observatorio-empresas.vodafone.es/visual-data/evolucion-empresas-espanolas-sectores/" target="_blank"title="Access to the interactive map">
                         <h3>Interactive | Mapping the changes in the business sector in Spain from 2008 to 2017</h3>
                         <p>Visualization: Victor San Vicente | Vodafone Enterprise Observatory | 27/06/2018</p>
@@ -344,7 +359,7 @@
                         <p>With Javier Galán and David Alameda | EL PAÍS | 02/03/2017</p>
                         </a>
                 </a>
-                <a class='box international text' href="https://internacional.elpais.com/internacional/2017/01/19/actualidad/1484841016_030114.html" target="_blank" title="Read the full article">
+                <a class='box international data' href="https://internacional.elpais.com/internacional/2017/01/19/actualidad/1484841016_030114.html" target="_blank" title="Read the full article">
                         <h3>‘God’, ‘gay’ and the least and most mentioned words in the inaugural addresses in USA</h3>
                         <p>With José Manuel Abad Liñán and David Alameda | EL PAÍS | 01/19/2017</p>
                 </a>
@@ -356,7 +371,7 @@
                         <h3>Very low minimum temperatures, but far from the historical records</h3>
                         <p>With José Manuel Abad Liñán | EL PAÍS | 01/17/2017</p>
                 </a>
-                <a class='box politics text' href="https://politica.elpais.com/politica/2016/12/23/actualidad/1482511077_637425.html" target="_blank" title="Read the full article">
+                <a class='box politics data' href="https://politica.elpais.com/politica/2016/12/23/actualidad/1482511077_637425.html" target="_blank" title="Read the full article">
                         <h3>The only Christmas Eve when the Spanish King said "pride and satisfaction"</h3>
                         <p>With J.M Abad Liñán and J. Galán | EL PAÍS | 12/23/2016</p>
                 </a>
@@ -400,16 +415,15 @@
                         <h3>The political parties in Spain forget transparency</h3>
                         <p>Master's degree in Data Journalism | QUÉ HACEN LOS DIPUTADOS | Transparency | 04/12/2016</p>
                 </a>
-                <a class='box politics text' href="http://www.elconfidencial.com/elecciones-generales/2015-12-20/el-hashtag-certifica-la-muerte-del-eslogan-electoral-pedir-el-voto-ya-no-es-suficiente_1124178/" target="_blank" title="Read the full article">
-                        <h3>The hashtag
-                         certifies the death of electoral slogans: asking for voting is not enough</h3>
+                <a class='box politics data' href="http://www.elconfidencial.com/elecciones-generales/2015-12-20/el-hashtag-certifica-la-muerte-del-eslogan-electoral-pedir-el-voto-ya-no-es-suficiente_1124178/" target="_blank" title="Read the full article">
+                        <h3>The hashtag certifies the death of electoral slogans: asking for voting is not enough</h3>
                         <p>Master's degree in Data Journalism | EL CONFIDENCIAL | General Elections | 12/20/2015</p>
                 </a>
-                <a class='box politics text' href="http://www.elconfidencial.com/elecciones-generales/2015-12-15/twitter-barometro-cis-elecciones-generales-20d_1120390/" target="_blank" title="Read the full article">
+                <a class='box politics data' href="http://www.elconfidencial.com/elecciones-generales/2015-12-15/twitter-barometro-cis-elecciones-generales-20d_1120390/" target="_blank" title="Read the full article">
                         <h3>The political parties in Spain ignore the Spanish main worries in Twitter</h3>
                         <p>Master's degree in Data Journalism | EL CONFIDENCIAL | General Elections | 12/15/2015</p>
                 </a>
-                <a class='box politics text' href="http://www.elconfidencial.com/elecciones-generales/2015-12-06/twitter-ciudadanos-podemos-elecciones-generales-20d_1113877/" target="_blank" title="Read the full article">
+                <a class='box politics data' href="http://www.elconfidencial.com/elecciones-generales/2015-12-06/twitter-ciudadanos-podemos-elecciones-generales-20d_1113877/" target="_blank" title="Read the full article">
                         <h3>The generation gap moves to Twitter: Ciudadanos and Podemos reinvent the two-party system</h3>
                         <p>Master's degree in Data Journalism | EL CONFIDENCIAL | General Elections | 12/06/2015</p>
                 </a>
