@@ -1,0 +1,645 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: 'Lexend', sans-serif;
+                margin: 0;
+                padding: 0;
+                color: #002855;
+                overflow-x: hidden;
+            }
+            header {
+                background-image: url("img/intro.PNG");
+                background-size: cover;
+                background-position: center;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                padding: 20px;
+                width: 100%;
+            }
+            .container {
+                max-width: 800px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            header h1 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 36px;
+                font-weight: 700;
+                text-align: center;
+            }
+            .description {
+                font-size: 18px;
+                margin: 20px 0;
+                font-family: 'Lexend', sans-serif;
+                font-weight: 100;
+                color: white;
+                text-align: center;
+            }
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+            .buttons a {
+                text-decoration: none;
+                padding: 4px 4px;
+                background-color: white;
+                color: #002855;
+                border-radius: 5px;
+                font-family: 'Lexend', sans-serif;
+                font-weight: 400;
+                font-size: 14px;
+                min-width: 180px;
+                text-align: center;
+            }
+            .buttons a:hover {
+                background-color: #e6e9ee;
+                color: #002855;
+            }
+            .section {
+                padding: 50px 20px;
+            }
+            .section-title {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 20px;
+                font-weight: 700;
+            }
+            .cards-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* ¡Este es el cambio importante! */
+                gap: 20px;
+                max-width: 1020px;
+                margin: 0 auto 80px auto;
+            }
+            .card-link {
+                text-decoration: none;
+                color: inherit;
+                display: block;
+                width: 300px;
+            }
+            .card {
+                border: 1px solid #ddd;
+                padding: 7px;
+                width: 100%;
+                max-width: 420px;
+                height: 360px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+                background: white;
+                text-align: left;
+                color: #002855;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .card-img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .card-title {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #002855;
+                font-family: 'Lexend', sans-serif;
+                font-weight: 400;
+            }
+            .card p.authors {
+                font-size: 12px;
+                color: #0056b3;
+                font-family: 'Lexend', sans-serif;
+                font-weight: 100;
+                margin-top: auto;
+                padding-bottom: 5px;
+            }
+            .card:hover {
+                transform: scale(1.02);
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+            .social-icons a {
+                margin: 0 15px;
+                display: inline-block;
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+            }
+            .social-icons a:hover {
+                color: #e6e9ee;
+            }
+            footer {
+                background-color: #001c38;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                font-size: 18px;
+                font-weight: 100;
+                width: 100%;
+            }
+            footer p {
+                margin: 5px 0;
+                font-weight: 100;
+            }
+            .download-cv {
+                text-decoration: none;
+                padding: 4px 4px;
+                background-color: white;
+                color: #002855;
+                border-radius: 5px;
+                font-family: 'Lexend', sans-serif;
+                font-weight: 400;
+                font-size: 14px;
+                min-width: 180px;
+                text-align: center;
+            }
+            .download-cv:hover {
+                background-color: #e6e9ee;
+                color: #002855;
+            }
+            @media (max-width: 768px) {
+                header {
+                    height: 100vh;
+                    max-height: 100svh;
+                    padding: 40px 8px;
+                }
+                .container {
+                    padding: 0 6px;
+                }
+                header h1 {
+                    font-size: 30px;
+                    line-height: 1.3;
+                }
+                .section-title {
+                    font-size: 24px;
+                }
+                .description {
+                    font-size: 14px;
+                    line-height: 1.8;
+                    padding: 0 2px;
+                }
+                .buttons a {
+                    min-width: 100%;
+                    font-size: 13px;
+                }
+                .card-link {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+                .card {
+                    width: 100%;
+                }
+                .card-title {
+                    font-size: 18px;
+                }
+                .card p.authors {
+                    font-size: 12px;
+                }
+                .cards-container {
+                    padding: 0px;
+                    gap: 14px;
+                    justify-content: center; /* También aquí para móviles */
+                }
+                footer {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    padding: 25px 10px;
+                }
+                footer .description {
+                    font-size: 13px;
+                    padding: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Guillermo Villar</h1>
+                <p class="description">
+                    <b>De profesión, soy periodista de datos y visualización.</b> Te he contado en Relevo historias de datos sobre <i>football analytics</i>, los hitos del deporte y su parte social durante casi tres años. <b>Aquí solo una selección de trabajos recientes</b>.<br><br>
+                    <b>De formación, soy científico de datos (MsC en Países Bajos) y casi doctor en la rama informática (UPM)</b>.
+                    Empecé como becario de periodismo de datos en El País y RTVE, tras un máster en esta área y un grado en periodismo (premio extraordinario) y en comunicación audiovisual.
+                </p>
+                <div class="buttons">
+    <a href="#análisis-de-fútbol">Análisis de fútbol</a>
+    <a href="#ggplot2-y-edición">ggplot2 y edición</a>
+    <a href="#datawrapper/flourish">Datawrapper/Flourish</a>
+    <a href="#especiales">Especiales</a>
+</div>
+
+            </div>
+        </header>
+        <div id="análisis-de-fútbol" class="section">
+    <h2 class="section-title">Análisis de fútbol</h2>
+    <div class="cards-container">
+
+        <a href="https://www.relevo.com/futbol/liga-primera/pichichi-barato-laliga-sxxi-bellingham-20240330113235-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/15.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El pichichi más barato de LaLiga en el siglo XXI: Bellingham lidera tras un mes sin jugar</h3>
+                <p class="authors">Relevo | con F. Martínez y D. Acosta</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/eurocopa-masculina/muro-mamardashvili-georgia-paradas-eurocopa-20240630002743-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/11.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El muro de Mamardashvili amenaza a España: sus récords de paradas, el pulso con Unai Simón y una grieta a su derecha</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/analisis-mejor-version-mbappe-traves-20250223090459-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/1.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Mbappé vuela hacia su mejor versión, pero aún le queda mantener el nivel que alcanzó en el PSG</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/goles-falta-peligro-extincion-20240826172338-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/10.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Los goles de falta, en peligro de extinción: cada vez menos, se fallan el doble y reservados solo a unos cuantos</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/flick-destierra-unocerismo-xavi-goles-20250129161113-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/2.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Hansi Flick destierra el "unocerismo" de Xavi: un gol más de media, el hito de los 100 tantos tres meses antes y solo un 1-0</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/betis-recuperaciones-zona-ataque-cambio-20241117060000-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/7.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El cambio ofensivo del Betis: líder en recuperaciones en zona de ataque… con un "pero" en la eficiencia</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/graficos-complementarios-explican-caida-barca-20241223122313-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/5.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Las dos caras de la "trampa" de Flick que avivan el debate sobre la caída del Barça</h3>
+                <p class="authors">Relevo | con Á. Pintanel</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/mercado-fichajes/tras-caida-valor-mercado-partir-20250121173222-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/3.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Los 28 años, el principio del fin del valor de mercado: "Toda lesión que tuvieras se achacaba a la edad"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/razon-lamine-yamal-estadisticas-cuestionan-20240922191404-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/8.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">¿Tiene razón Lamine Yamal? Las estadísticas que cuestionan las medias del FIFA 25</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/mercado-fichajes/fichajes-millones-euros-laliga-grandes-20240903115119-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/9.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Se buscan fichajes de más de diez millones: canteranos y cedidos salen al rescate en LaLiga frente a una Premier de récord</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/mercado-fichajes/gastos-liga-saudi-mercado-20230826175844-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/16.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Ya no hay cinco grandes ligas, son seis: los equipos de Arabia gastan más del doble que LaLiga en fichajes</h3>
+                <p class="authors">Relevo | con D. Acosta</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/eurocopa-masculina/datos-convocatoria-espana-eurocopa-20240527150618-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/13.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Más peso de LaLiga, dominio de Athletic y Real y equilibrio Madrid-Barça: los datos de la convocatoria de España para la Eurocopa</h3>
+                <p class="authors">Relevo | con D. Ojeda y F. Martínez</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="ggplot2-y-edición" class="section">
+    <h2 class="section-title">ggplot2 y edición</h2>
+    <div class="cards-container">
+
+        <a href="https://www.relevo.com/juegos-olimpicos/graficos-espana-juegos-olimpicos-medallistas-20240725110814-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/a.jpg" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El 'boom' de Barcelona 92, la desigualdad de género y el dominio del norte: cinco gráficos que resumen la historia de España en los JJOO</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/estadios-laliga-bernabeumetropolitano-camp-ruido-20250321103457-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/c.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Por qué al fenómeno RuidoBernabéu no le han salido imitadores: la clave está en un radio de 500 metros</h3>
+                <p class="authors">Relevo | con S. Cerqueira y D. Ojeda</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/formula1/sabe-llegara-tampoco-grandes-premios-20241025172427-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/f.jpg" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Un lío con cuatro asteriscos siembra la duda sobre la carrera 400 de Fernando Alonso</h3>
+                <p class="authors">Relevo | con J. Peiró</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/juegos-olimpicos/cuatro-dias-solo-medallaespana-vuelve-20240730224717-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/h.jpg" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">¿Cuatro días y solo una medalla? España vuelve al pánico prematuro en los JJOO, pero es un espejismo</h3>
+                <p class="authors">Relevo | con J. M. Amorós</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/mas-deportes/deporte-espanol-2024-traves-busquedas-20241221174628-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/e.jpg" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El cisma en las búsquedas del deporte español en 2024: Google tiene una paradoja con Lamine Yamal y se 'olvida' de Fernando Alonso</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/peor-valencia-anos-peter-20241109102214-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/d.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El gráfico que resume la crisis del Valencia: la puntuación ELO más baja en 36 años</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/traslado-estadios-futbol-liga-distancia-20240214175703-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/j.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El problema urbanístico que empuja al Rayo fuera de Vallecas: "Es el drama de los estadios nuevos"</h3>
+                <p class="authors">Relevo | con D. Acosta y D. Ojeda</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/mas-deportes/sesgo-inteligencia-artificial-imagenes-mujeres-20240308121437-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/g.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Pedí 50 veces a una IA dos fotos con rostros de deportistas: lo que me encontré, por desgracia, no te sorprenderá</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/casado-escucha-guardiola-supera-critica-20241104143917-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/i.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Casadó 'escucha' a Guardiola y supera la crítica que arrastró el primer Rodri: "Es mérito de Flick"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="datawrapper/flourish" class="section">
+    <h2 class="section-title">Datawrapper/Flourish</h2>
+    <div class="cards-container">
+
+        <a href="https://www.relevo.com/atletismo/analisis-cambio-distancias-marcha-maraton-20241211140518-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/19.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Los afectados por el cambio en la marcha, caladero de medallas españolas: "Los especialistas de 50 km han quedado casi extinguidos"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/anomalias-temperatura-estadios-laliga-cambio-20250221101232-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/18.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Por qué pasas más calor en los estadios que antes: el mapa de las anomalías térmicas de LaLiga y su relación con el cambio climático</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/atletismo/diseccionando-record-mundo-ruth-chepngetich-20241015175501-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/26.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Diseccionando el récord de Ruth Chepngetich: la lección de 2021 y los 12 minutos de evolución que han marcado la historia de la maratón</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/motociclismo/motogp/seis-titulos-motos-italia-espanoles-20231126123750-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/37.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Italia 6 - España 23: todos los países juntos solo llegan a la mitad de títulos de motos que España</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/anos-informes-retratan-violencia-estadios-20241021050000-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/25.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">20 años de informes que retratan la violencia en los estadios: más propuestas de sanción, menos personas de riesgo</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/mapa-futbolistas-primera-espana-poblada-20241005163504-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/27.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El mapa de los futbolistas de la España menos poblada: "Sus padres los llevaban donde hiciera falta y por eso están donde están"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/mas-deportes/record-cambio-nombre-propio-varios-20240505180650-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/31.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Un récord y varios peros: las ayudas a más de 100 madres deportistas se convierte en una partida "necesaria pero insuficiente"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/ciclismo/la-vuelta/pasado-vuelta-ciclista-20230908131558-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/44.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">¿Cuál es la provincia española más y menos visitada por La Vuelta en toda su historia? De las habituales a las olvidadas</h3>
+                <p class="authors">Relevo | con D. Acosta</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/irreductibles-quiniela-evolucion-datos-apuestas-20241124133632-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/21.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Los irreductibles de La Quiniela, el juego que paralizaba al país y ahora sucumbe ante las apuestas: "Está en la UVI"</h3>
+                <p class="authors">Relevo | con D. Ojeda</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/aficion-fiel-primera-20230604072720-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/43.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">¿Cuál es la afición más fiel de Primera?</h3>
+                <p class="authors">Relevo | con D. Acosta y F. Martínez</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/ciclismo/la-vuelta/anomalias-termicas-olas-calor-vuelta-20240908152141-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/28.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Fin a otra Vuelta con temperaturas extremas: las anomalías térmicas y las crecientes olas de calor cuestionan sus fechas</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/cara-impacto-economico-futbol-profesional-20231001174413-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/45.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">La cara B de la riqueza que genera el fútbol: el 43% del gasto de los aficionados va a las apuestas online</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/mapa-miembros-asociacion-clubes-europeos-20240410144205-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/32.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El mapa de los 500 clubes de la ECA: quién es quién en la asociación en la que manda Al-Khelaïfi</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/mas-deportes/rarito-ritmica-invisible-trampolin-cifras-20231227133953-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/35.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">"Rarito" en rítmica, invisible en trampolín: por qué las cifras oficiales no muestran la evolución de los chicos gimnastas</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/mas-deportes/mapa-atletas-elite-evidencia-brecha-20231203162931-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/36.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El mapa de los deportistas de élite que evidencia una brecha norte-sur en España</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/copa-del-rey/precios-entradas-cacereno-atletico-copa-20241203173727-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/22.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Cómo rentabilizar el partido del año y no morir en el intento: la intrahistoria del precio de las entradas del Cacereño-Atlético de Copa del Rey</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/madrid-ciudad-ideal-colombia-rumania-20240326171955-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/33.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Por qué Madrid es la ciudad ideal para un Colombia - Rumanía: "Es como un segundo hogar para nuestros futbolistas"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/liga-primera/clasico-ultimo-golpe-bolsillo-aficion-20231026162125-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/38.PNG" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El Clásico, último golpe al bolsillo de la afición: "Te vale más barato el viaje y la entrada fuera que la entrada en Barcelona"</h3>
+                <p class="authors">Relevo</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="especiales" class="section">
+    <h2 class="section-title">Especiales</h2>
+    <div class="cards-container">
+
+        <a href="https://www.relevo.com/ciclismo/la-vuelta/sequia-espanola-vuelta-volvera-victoria-20240901092205-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/48.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">Diez años sin ganar La Vuelta: el ciclismo español sufre… pero Italia y Francia están igual o peor</h3>
+                <p class="authors">Relevo | con D. Ojeda y S. Cerqueira</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/brecha-futbol-espana-pobre-rica-familia-cuota-20240720005248-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/49.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">La brecha de jugar al fútbol en la España más pobre y la más rica: "Si una familia no paga la cuota, se ofrece a limpiar"</h3>
+                <p class="authors">Relevo | con S. Fenoll</p>
+            </div>
+        </a>
+
+        <a href="https://www.relevo.com/futbol/mapa-espana-vaciada-laliga-combatirlo-20240126135144-nt.html" target="_blank" class="card-link">
+            <div class="card">
+                <img src="img/50.png" alt="Thumbnail" class="card-img">
+                <h3 class="card-title">El mapa de la España vaciada de LaLiga y cómo combatirlo: "Se te va un pico"</h3>
+                <p class="authors">Relevo | con S. Cerqueira y D. Acosta</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/guillermovillarrodriguez" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/_gvillar" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:guillevillarrodriguez@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <a href="guillermovillar-cv.pdf" class="download-cv" download>
+                Descarga mi currículum
+            </a>
+            <div class="container">
+                <p class="description">&copy; 2025 Guillermo Villar Rodríguez</p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
